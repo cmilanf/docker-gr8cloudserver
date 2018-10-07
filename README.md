@@ -82,10 +82,13 @@ Steps:
 Some screenshots of a real MSX:
 
 Configuration process:
-![MSX Configuration](/screenshots/msx_config.png)
+
+![MSX Configuration](/screenshots/msx_config.png | width=200)
 
 Bootup:
-![Bootup](/screenshots/msx_network_bootup.png)
+
+![Bootup](/screenshots/msx_network_bootup.png | width=200)
 
 MSX-DOS 2 and Multimente loaded from the network!
-![Multimente](/screenshots/msx_network_mm.png)
+
+![Multimente](/screenshots/msx_network_mm.png | width=200)
