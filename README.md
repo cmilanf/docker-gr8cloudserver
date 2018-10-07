@@ -58,3 +58,34 @@ docker run -it -p 684:684 -p 20:20 -p 21:21 -p 34000-34010:34000-34010 --rm --na
 This `docker-run` command exposes all the needed ports to the Docker host, give the container the name `gr8cloud`, set the FTP password to `gr8net`, add the 3 MAC addresses and passwords `101600040501 MyPassword,10160004051E i*love+gr8net,10160004057A msx_is_the_best` to the `passwd` file and specify my local computer IP address for the FTP passive connections. Finally, it uses the image from my repository, but it could be yours also!
 
 Feel free to modify it to your needs!
+
+# Building an MSX volume image
+Building an MSX volume image is not obvious, so I will provide some guidance here. I don't know of any modern operating system tool that can do the process, so if there is not one, we will have to rely on the brilliant and advanced [openMSX](https://openmsx.org/), the cross-platform MSX emulators that aims for perfections, and I must say that it mostly achieves it!
+
+Steps:
+
+  1. We must configure openMSX to run with an MSX 2 computer or higher and a Nextor compatible disk interface, such as [MegaflashROM SCC+ SD](https://openmsx.org/manual/user.html#sd).
+  2. Set drive size in `MegaFlashROM_SCC+_SD.xml`. It will create the SD interface images in your harddisk upon first openMSX boot up.
+  3. If MegaflashROM SCC+ SD ROM is loaded correctly, you will be able to do a `CALL FDISK` from MSX-BASIC and partition your virtual SD card.
+  4. Reboot openMSX, so the drive is available. You can stuff it with the files you want. For my example here, I just copied over the MegaflashROM SCC+ SD disk rom to it.
+  5. Close openMSX.
+  6. Upload your SD card file to the `/srv/gr8cloudserver/data/` folder. You can use the Docker image built in FTP server!
+  7. Rename your image file to `yourmacaddress.img`. For instance: `101600040501.img`.
+  8. Ensure the `passwd` file is correctly with the MAC and the password.
+  9. Now back to your real MSX with the GR8NET!
+  10. Configure your GR8cloud server from MSX-BASIC: `CALL NETSETCLOUD("myserver.mydomain.org:684","MyPassword")`
+  11. Ensure GR8cloud is enabled in GR8NET: `CALL NETSETCLOUD(1)`
+  12. And finally, reboot your computer in a mapper mode that has Nextor support included. For example: `CALL NETSETMAP(30)`
+  13. Your MSX computer should connect to the server, mount the cloud volume and boot up from it.
+  14. You can use the cloud volume as it a regular local disk were, writes supported!
+
+Some screenshots of a real MSX:
+
+Configuration process:
+![MSX Configuration](/screenshots/msx_config.png)
+
+Bootup:
+![Bootup](/screenshots/msx_network_bootup.png)
+
+MSX-DOS 2 and Multimente loaded from the network!
+![Multimente](/screenshots/msx_network_mm.png)
