@@ -6,7 +6,7 @@ The feature and his architecture is explained in detail in chapter 7 of the [GR8
 GR8NET and GR8cloud server are developed by [Eugeny Brychkov](http://www.gr8bit.ru/).
 
 # Architecture
-Architecture follows a simple client-server model with a good reminescense of [Novell NetWare](https://en.wikipedia.org/wiki/NetWare]) servers. It is composed of:
+Architecture follows a simple client-server model with a good reminescense of [Novell NetWare](https://en.wikipedia.org/wiki/NetWare) servers. It is composed of:
 
   * **The GR8cloud server**. Developed for .NET Core 2.1, exposes the port 684/tcp (configurable) that will be used by MSX computers to connect with. Authentication and data transfer are done through this port.
   * **The GR8NET client**. Client is embeded in the ROM of the GR8NET network and multimedia card for MSX. CALL NETSETCLOUD is used for the setup.
