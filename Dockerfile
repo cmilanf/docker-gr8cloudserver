@@ -20,7 +20,7 @@ LABEL FTP_PWD="The FTP user password" \
     FTP_PASV_ADDRESS="FTP pasive mode address. If not present, it will be autodetected."
 
 RUN mkdir -p /srv/gr8cloudserver/data \
-    && mkdir -p /var/log/supervisor \
+    && mkdir -p /var/log/supervisord \
     && apk update \
     && apk add --no-cache unrar supervisor vsftpd bash openssl \
     && cd /srv/gr8cloudserver \
