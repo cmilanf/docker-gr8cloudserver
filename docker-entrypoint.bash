@@ -4,7 +4,7 @@ echo "========================================="
 cat /srv/gr8cloudserver/readme.txt
 echo ""
 echo "Downloading default GR8cloud cloud volume..."
-wget http://www.gr8bit.ru/software/gr8cloudserver/default-gr8cloud-volimg.rar -O /srv/gr8cloudserver/data/passwd
+wget http://www.gr8bit.ru/software/gr8cloudserver/default-gr8cloud-volimg.rar -O /srv/gr8cloudserver/data/default-gr8cloud-volimg.rar
 echo ""
 
 if [ -z ${FTP_PWD} ]; then
