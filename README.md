@@ -83,12 +83,12 @@ Some screenshots of a real MSX:
 
 Configuration process:
 
-<img src="/screenshots/msx_config.png" width="600px" />
+![](https://github.com/cmilanf/docker-gr8cloudserver/raw/master/screenshots/msx_config.png)
 
 Bootup:
 
-<img src="/screenshots/msx_network_bootup.png" width="600px" />
+![](https://github.com/cmilanf/docker-gr8cloudserver/raw/master/screenshots/msx_network_bootup.png)
 
 MSX-DOS 2 and Multimente loaded from the network!
 
-<img src="/screenshots/msx_network_mm.png" width="600px" />
+![](https://github.com/cmilanf/docker-gr8cloudserver/raw/master/screenshots/msx_network_mm.png)
